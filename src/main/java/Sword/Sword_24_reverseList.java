@@ -1,4 +1,4 @@
-
+package Sword;
 
 public class Sword_24_reverseList {
     public class ListNode {
