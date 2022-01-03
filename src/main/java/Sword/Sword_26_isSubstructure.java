@@ -3,12 +3,12 @@ package Sword;
 import java.util.ArrayList;
 import java.util.List;
 
-//class TreeNode {
-//    int val;
-//    TreeNode left;
-//    TreeNode right;
-//    TreeNode(int x) { val = x; }
-//}
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode(int x) { val = x; }
+}
 
 public class Sword_26_isSubstructure {
     class Solution {
