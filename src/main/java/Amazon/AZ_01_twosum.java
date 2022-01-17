@@ -1,19 +1,17 @@
 package Amazon;
 
+import java.util.HashMap;
+
 public class AZ_01_twosum {
     public int[] twoSum(int[] nums, int target) {
-        int head = 0, tail = nums.length;
+
         int[] res = new int[2];
-        for (int i = head;i<tail;++i){
-            for (int j = tail;j>head;--j){
-                if (target==nums[i]+nums[j]){
-                    res[0] = nums[i];
-                    res[1] = nums[j];
-                    return new int[]{i,j};
-                }
-
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for (int i = 0;i < nums.length;++i){
+            if (map.containsKey(target - nums[i])){
+               return new int[]{i,map.get(target - nums[i])};
             }
-
+            map.put(nums[i],i);
         }
       return res;
     }

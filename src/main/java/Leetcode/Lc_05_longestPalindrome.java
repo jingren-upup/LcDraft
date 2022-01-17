@@ -3,45 +3,36 @@ package Leetcode;
 import java.util.Stack;
 
 public class Lc_05_longestPalindrome {
-
+    int low, maxlen;
     public String longestPalindrome(String s) {
-            if(s == null || s.length() == 0){
-                return "";
+            //边界情况
+            if(s == null || s.length() < 2){
+                return s;
             }
-            int left = 0;
-            int right = 0;
 
-            int length = s.length();
-
-            int len = 1;
-            int maxLen = 0;
-            int maxStart = 0;
-
-            for (int i = 0; i<length; i++){
-                left = i-1;
-                right = i+1;
-                while (left >=0 && s.charAt(i) == s.charAt(left)){
-                    left--;
-                    len++;
-                }
-                while (right < length && s.charAt(i) == s.charAt(right)){
-                    right++;
-                    len++;
-                }
-                while (left >= 0 && right <=length && s.charAt(right) == s.charAt(left)){
-                    len = len + 2;
-                    left --;
-                     right ++;
-                }
-                if (len > maxLen){
-                    maxLen = len;
-                    maxStart = left;
-                }
-                len = 1;
+            int len = s.length();
+            for (int i = 0; i < len -1;++i){
+                //奇数情况
+                recur(s,i,i);
+                //偶数情况
+                recur(s,i,i+1);
             }
-            return s.substring(maxStart+1, maxStart+maxLen+1);
-
-
+            //去边
+           return s.substring(low,low+maxlen);
+    }
+    private void recur(String s, int j, int k) {
+        //如果范围没出
+        while(j>=0 && k<=s.length()-1 && s.charAt(j) == s.charAt(k)){
+            j--;
+            k++;
+        }
+        //更新最大长度
+        if(maxlen<k-j-1){
+            //low应该是当前回文数的做左指针 j是左指针的左边界
+            low = j+1;
+            //更新长度 这个公式应该是(k-1 -(j+1))+1 最后得出的这个公式s
+            maxlen = k-j-1;
+        }
 
     }
 
