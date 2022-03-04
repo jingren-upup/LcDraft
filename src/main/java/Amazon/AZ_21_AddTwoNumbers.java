@@ -44,4 +44,29 @@ public class AZ_21_AddTwoNumbers {
         //从下一位开始
         return sentinel.next;
     }
+    public ListNode add(ListNode l1, ListNode l2) {
+        ListNode root = new ListNode(0);
+        ListNode A = root;
+        //进位符
+        int plus = 0;
+        //只要有的进位
+        while (l1 != null || l2 != null || plus != 0){
+            int l1val = l1 != null? l1.val:0;
+            int l2val = l2 != null? l2.val:0;
+            int sum = l1val + l2val + plus;
+            plus = sum/10;
+            //本位
+            ListNode sumNode = new ListNode(sum % 10);
+            A.next = sumNode;
+            A = sumNode;
+
+            if (l1 != null){
+                l1 = l1.next;
+            }
+            if (l2 != null){
+                l2 = l2.next;
+            }
+        }
+        return root.next;
+    }
 }
