@@ -1,6 +1,6 @@
 package Amazon;
 
-public class AZ_10_rotate {
+public class AZ_10_rotateMatrix {
     public void rotate(int[][] matrix) {
         //易得 新的数组的i 等于上个数组的j
         //新的数组的j等于上个数组的长度减去i再减1

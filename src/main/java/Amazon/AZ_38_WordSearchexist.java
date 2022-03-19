@@ -1,6 +1,6 @@
 package Amazon;
 
-public class AZ_38_exist {
+public class AZ_38_WordSearchexist {
     //row of the board
     int row;
     //columns of the board

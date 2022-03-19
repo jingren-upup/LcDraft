@@ -57,8 +57,10 @@ public class AZ_21_AddTwoNumbers {
             plus = sum/10;
             //本位
             ListNode sumNode = new ListNode(sum % 10);
+            //assign next
             A.next = sumNode;
-            A = sumNode;
+            //go next
+            A = A.next;
 
             if (l1 != null){
                 l1 = l1.next;

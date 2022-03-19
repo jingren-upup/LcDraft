@@ -3,6 +3,15 @@ package Amazon;
 import java.util.LinkedList;
 import java.util.Queue;
 
+class point{
+    public point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    int x;
+    int y;
+
+}
 public class AZ_31_numIslands {
     public int numIslands(char[][] grid) {
 
@@ -66,12 +75,4 @@ public class AZ_31_numIslands {
         return 0<=x && x<m && 0<=y &&y<n;
     }
 }
-class point{
-    public point(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-    int x;
-    int y;
 
-}
